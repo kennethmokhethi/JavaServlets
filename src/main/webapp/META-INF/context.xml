@@ -1,0 +1,13 @@
+<datasources>
+    <local-tx-datasource>
+        <!--        <jndi-name>/jdbc/Exp</jndi-name>-->
+        <jndi-name>/java:jboss/datasources/Servlet</jndi-name>
+        <type-mapping>SQL</type-mapping>
+        <connection-url>jdbc:microsoft:sqlserver://localhost:3306/StudentDB</connection-url>
+        <driver-class>com.microsoft.jdbc.sqlserver.SQLServerDriver</driver-class>
+        <user-name>root</user-name>
+        <password>##1235%Asdfrty</password>
+        <min-pool-size>5</min-pool-size>
+        <max-pool-size>1000</max-pool-size>
+    </local-tx-datasource>
+</datasources>
