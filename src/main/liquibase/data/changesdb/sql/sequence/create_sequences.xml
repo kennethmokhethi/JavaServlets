@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+
+    <changeSet author="KMM" id="1.0.4">
+        <tagDatabase tag="T_1.0.3"/>
+    </changeSet>
+
+    <changeSet author="KMM" id="1.0.5">
+        <createSequence sequenceName="s_no_seq"
+                        startValue="202000000"
+                        incrementBy="1"/>
+        <rollback>
+            <dropSequence sequenceName="s_no_seq"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

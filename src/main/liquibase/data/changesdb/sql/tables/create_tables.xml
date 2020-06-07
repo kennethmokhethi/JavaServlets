@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="KMM" id="1.0.0">
+        <tagDatabase tag="T_1.0.3"/>
+    </changeSet>
+
+    <changeSet author="KMM" id="1.0.1">
+        <createTable tableName="Student">
+            <column name="S_No" type="NUMBER(15)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_STUDENT"/>
+            </column>
+            <column name="S_Name" type="varchar(100)"/>
+            <column name="S_Surname" type="varchar(100)"/>
+            <column name="S_Password" type="varchar(50)"/>
+            <column name="Degree" type="varchar(100)"/>
+        </createTable>
+        <rollback>
+            <dropTable tableName="Student"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="KMM" id="1.0.2">
+        <createTable tableName="Module">
+            <column name="M_Code" type="VARCHAR(50)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_MODULE"/>
+            </column>
+            <column name="M_Name" type="VARCHAR(255)"/>
+            <column name="M_Duration" type="NUMBER(2)"/>
+            <column name="M_Credits" type="NUMBER(3)"/>
+        </createTable>
+        <rollback>
+            <dropTable tableName="Module"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="KMM" id="1.0.3">
+        <createTable tableName="Student_module">
+            <column name="S_No" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_STUDENT_MODULE_S"/>
+            </column>
+            <column name="M_Code" type="VARCHAR(50)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_STUDENT_MODULE_M"/>
+            </column>
+            <column name="Marks" type="NUMBER(2)"/>
+        </createTable>
+        <rollback>
+            <dropTable tableName="Student_module"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>
