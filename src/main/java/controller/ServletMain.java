@@ -26,7 +26,6 @@ public class ServletMain extends HttpServlet {
     private Module_DAO module_dao;
     private Student_module_DAO student_module_dao;
 
-
     @Override
     public void init() throws ServletException {
         super.init();
